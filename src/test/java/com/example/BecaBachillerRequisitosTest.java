@@ -1,4 +1,7 @@
+package com.example;
+
 import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,6 +11,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 /****************************************/
@@ -18,8 +22,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 // Título: Verificar que la página de requisitos de Beca Bachiller muestre exactamente los 3 requisitos
 //
 // PASO 1. Ingresar a https://lpz.ucb.edu.bo/
-// PASO 2. Hacer clic en el botón "Becas" (XPath proporcionado)
-// PASO 3. Hacer clic en el botón "Requisitos" (XPath proporcionado)
+// PASO 2. Hacer clic en el botón "Becas" 
+// PASO 3. Hacer clic en el botón "Requisitos" 
 //
 // Resultado Esperado: 
 // La página debe mostrar los siguientes tres requisitos:
@@ -60,13 +64,13 @@ public class BecaBachillerRequisitosTest {
         driver.get("https://lpz.ucb.edu.bo/");
         esperar(3);
         
-        // PASO 2: Hacer clic en "Becas" usando el XPath exacto
+        // PASO 2: Hacer clic en "Becas"
         WebElement becasLink = driver.findElement(By.xpath("//*[@id=\"menu-item-207841\"]/a"));
         System.out.println("Texto del enlace Becas: " + becasLink.getText());
         becasLink.click();
         esperar(4); // Esperar a que cargue la página de becas
         
-        // PASO 3: Hacer clic en "Requisitos" usando el XPath exacto
+        // PASO 3: Hacer clic en "Requisitos"
         WebElement requisitosBoton = driver.findElement(By.xpath("//*[@id=\"post-207960\"]/div/div/div/div[2]/div[4]/div[2]/div[2]/a"));
         System.out.println("Botón Requisitos encontrado: " + requisitosBoton.getText());
         requisitosBoton.click();
